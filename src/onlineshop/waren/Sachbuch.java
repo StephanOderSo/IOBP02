@@ -15,6 +15,10 @@ public class Sachbuch extends Buch {
         this.thema = thema;
     }
 
+    /**
+    * fasst alle Themen des Sachbuches zusammen
+     * @return Zusammenfassung als String
+    * */
     public String zusammenfassen() {
         String zusammenfassung = "";
         int anzahlThemen = getAnzahlThemen();
@@ -29,6 +33,10 @@ public class Sachbuch extends Buch {
         return zusammenfassung;
     }
 
+    /**
+     * gibt Themenahzahl des Sachbuches zurueck
+     * @return Themenanzahl (int)
+     * */
     private int getAnzahlThemen() {
         return 0;
     }
