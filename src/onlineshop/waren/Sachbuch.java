@@ -1,5 +1,9 @@
 package onlineshop.waren;
 
+import jdk.jshell.spi.ExecutionControl;
+
+import java.util.Objects;
+
 public class Sachbuch extends Buch {
     private static final String KLASSEN_PRAEFIX = "SB";
     private String thema;
@@ -39,5 +43,36 @@ public class Sachbuch extends Buch {
      * */
     private int getAnzahlThemen() {
         return 0;
+    }
+
+    @Override
+    public String toString(){
+        return super.toString() + "\nThema:" + thema;
+    }
+
+//    @Override
+//    public boolean equals(Object obj)
+//    {
+//        if(Objects.isNull(obj))
+//            throw new NullPointerException();
+//
+//        // und so weiter....
+//        return false;
+//
+//    }
+
+    @Override
+    public Sachbuch clone(){
+        Sachbuch sachbuch = null;
+        sachbuch = (Sachbuch) super.clone();
+
+        sachbuch.thema = this.thema;
+
+        return sachbuch;
+    }
+
+    @Override
+    public int hashCode(){
+        return this.toString().hashCode();
     }
 }

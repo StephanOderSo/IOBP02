@@ -1,5 +1,8 @@
 package onlineshop.waren;
 
+import jdk.jshell.spi.ExecutionControl;
+
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Buch extends Artikel implements Cloneable {
@@ -47,11 +50,37 @@ public class Buch extends Artikel implements Cloneable {
 
   @Override
   public String toString() {
-    return "Buch{" +
+    return super.toString() + "\nBuch{" +
       "seiten=" + seiten +
       ", autor='" + autor + '\'' +
       ", titel='" + titel + '\'' +
       ", scanner=" + scanner +
       '}';
+  }
+
+  @Override
+  public boolean equals(Object obj){
+
+    if(Objects.isNull(obj))
+      throw new NullPointerException("Passed Object is null");
+
+    if(obj == this)
+      return true;
+
+    if(!(obj instanceof Sachbuch))
+      return false;
+
+    Sachbuch foreignSachbuch = (Sachbuch) obj;
+
+    if(foreignSachbuch.beschreibung == this.beschreibung && foreignSachbuch.hersteller == this.hersteller
+    && foreignSachbuch.seiten == this.seiten && foreignSachbuch.autor == this.autor && foreignSachbuch.titel == this.titel)
+      return true;
+    else
+      return false;
+  }
+
+  @Override
+  public int hashCode(){
+    return this.toString().hashCode();
   }
 }
