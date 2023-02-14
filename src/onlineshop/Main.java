@@ -6,6 +6,8 @@ import onlineshop.waren.Sachbuch;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.Scanner;
+
 /**
  * Diese Klasse stellt den Einstiegspunkt in das Programm dar.
  * Dies Klasse beinhaltet die <code>mmain</code>-Methode, mit der
@@ -26,11 +28,22 @@ public class Main {
 
   public static void main(String[] args) {
     // write your code here
-    Buch buch = neuesBuch("asdfasdf", "asdfasdfasdf", "asdfasdf", 333);
-    Buch buch2 = buch.clone();
-    System.out.println("buch2 = " + buch2);
+//    Buch buch = neuesBuch("asdfasdf", "asdfasdfasdf", "asdfasdf", 333);
+//    Buch buch2 = buch.clone();
+//    System.out.println("buch2 = " + buch2);
 
-    execEinheit2();
+//    execEinheit2();
+    execEinheit3();
+
+  }
+
+  public static void execEinheit3(){
+    Scanner sc = new Scanner(System.in);
+
+    System.out.println("Bitte Testfallnummer eingeben");
+    String input = sc.next();
+    System.out.println(input);
+
 
   }
 
